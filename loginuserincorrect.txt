@@ -1,0 +1,6 @@
+try {
+>>     Invoke-RestMethod -Uri "http://localhost:3000/login" -Method POST -ContentType "application/json" -Body (@{username="coopercoote"; password="wrongpassword"} | ConvertTo-Json)
+>> } catch {
+>>     $_.ErrorDetails.Message
+>> }
+{"message":"Invalid credentials"}

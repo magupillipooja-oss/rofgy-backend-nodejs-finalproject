@@ -1,0 +1,5 @@
+Invoke-RestMethod -Uri "http://localhost:3000/register" -Method POST -ContentType "application/json" -Body (@{username="coopercoote"; email="ccoote@gmail.com"; password="cg123"} | ConvertTo-Json)
+
+message                            
+-------                            
+The user coopercoote has been added

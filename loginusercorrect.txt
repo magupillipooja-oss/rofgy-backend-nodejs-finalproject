@@ -1,0 +1,5 @@
+Invoke-RestMethod -Uri "http://localhost:3000/login" -Method POST -ContentType "application/json" -Body (@{username="coopercoote"; password="cg123"} | ConvertTo-Json)
+
+message                  
+-------                  
+coopercoote has logged in
