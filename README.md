@@ -2,7 +2,7 @@
 
 A RESTful backend API for a social media application, built with Node.js, Express, and MongoDB. Supports user registration, JWT-based authentication, and full CRUD operations on posts. Containerized with Docker and deployed live on Render, with data persisted on MongoDB Atlas.
 
-**Live Demo:** https://YOUR-RENDER-URL.onrender.com
+**Live Demo:** https://socialmediaapp-sqvv.onrender.com
 *(Note: hosted on a free tier — the app may take 30-60 seconds to wake up if it's been inactive.)*
 
 ## Features
