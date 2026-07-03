@@ -10,7 +10,7 @@ const SECRET_KEY = 'your_secret_key';
 
 mongoose.set('strictQuery', false);
 
-const uri =  "mongodb://localhost:27017";
+const uri =  "mongodb://mongodb:27017";
 mongoose.connect(uri,{'dbName':'SocialDB'});
 
 const User = mongoose.model('User', { username: String, email: String, password: String });
@@ -83,8 +83,8 @@ app.post('/register', async (req, res) => {
     const token = jwt.sign({ userId: newUser._id, username: newUser.username }, SECRET_KEY, { expiresIn: '1h' });
     req.session.token = token;
 
-    // Respond with success message
-    res.send({"message":`The user ${username} has been added`});
+    // Redirect to index with username as a query parameter
+    res.redirect(`/index?username=${newUser.username}`);
   } catch (error) {
     console.error(error);
     // Handle server errors
@@ -106,8 +106,8 @@ app.post('/login', async (req, res) => {
     const token = jwt.sign({ userId: user._id, username: user.username }, SECRET_KEY, { expiresIn: '1h' });
     req.session.token = token;
 
-    // Respond with a success message
-    res.send({"message":`${user.username} has logged in`});
+   // Redirect to index with username as a query parameter
+    res.redirect(`/index?username=${user.username}`);
   } catch (error) {
     console.error(error);
     // Handle server errors
